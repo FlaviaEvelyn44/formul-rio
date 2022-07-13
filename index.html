@@ -8,186 +8,188 @@
     <title>Formulário de cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
 
-</head>
+</head >
 
-<body>
+            <body>
 
-    <div class="container pt-7">
-        <div class="row d-flex justify-content-center">
-            <div class="col-lg-6">
-                <h1 class="text-center">Formulário de Cadastro</h1>
-                <form onsubmit="validarCpf()">
-                    <div class="form-group">
-                        <label class="radio-inline col-sm-4 mb-3"><input type="radio" name="radio" value="juridica"
-                                onclick="pessoa(this.value);">Pessoa Juridica</label>
-                        <label class="radio-inline col-sm-4 mb-3"><input type="radio" name="radio" value="fisica"
-                                onclick="pessoa(this.value);">Pessoa Fisica</label>
+                <div class="container pt-7">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6">
+                            <h1 class="text-center">Formulário de Cadastro</h1>
+                            <form onsubmit="validarCpf()">
+                                <div class="form-group">
+                                    <label class="radio-inline col-sm-4 mb-3"><input type="radio" name="radio" value="juridica"
+                                        onclick="pessoa(this.value);">Pessoa Juridica</label>
+                                    <label class="radio-inline col-sm-4 mb-3"><input type="radio" name="radio" value="fisica"
+                                        onclick="pessoa(this.value);">Pessoa Fisica</label>
+                                </div>
+                                <div id="fisica"></div>
+                                <div class="row input-group mb-3 fw-semibold">
+                                    <div class="col-md-6">
+                                        <label class="control-label col-sm-2" for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label col-sm-2" for="sobrenome">Sobrenome</label>
+                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="form-control-label col-sm-2" for="CPF">CPF</label>
+                                    <input type="text" class="form-control cpf" id="cpf" name="cpf" maxlength="14" required>
+                                </div>
+                                <div id="juridica" style="display:none;">
+                                    <div class="col-md-5">
+                                        <label class="form-control-label col-sm-2" for="cnpj">CNPJ</label>
+                                        <input type="text" class="form-control cnpj" id="cnpj" name="cnpj">
+                                    </div>
+                                    <div class="row input-group mb-3 fw-semibold">
+                                        <div class="col-md-6">
+                                            <label class="control-label col-sm-6" for="razaoSocial">Razão Social</label>
+                                            <input type="text" class="form-control" id="razaoSocial" name="razaoSocial">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label" for="nomefantasia">Nome Fantasia</label>
+                                            <input type="text" class="form-control col-lg-6" id="nomefantasia" name="nomefantasia">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="sexo">Sexo</label>
+                                    <div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sexo" id="masculino" value="M">
+                                                <label class="form-check-label" for="masculino">Masculino</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sexo" id="feminino" value="F">
+                                                <label class="form-check-label" for="feminino">Feminino</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sexo" id="outro" value="O">
+                                                <label class="form-check-label" for="outro">Prefiro não informar</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row input-group mb-3 fw-semibold">
+                                    <div class="col-md-6">
+                                        <label>Telefone</label>
+                                        <input type="tel" id="tele" name="tele"
+                                            class="form-control bg-light btn-outline-secondary" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email">Email</label>
+                                        <input class="form-control" type="email" name="email" id="email"
+                                            placeholder="Digite seu email...">
+                                    </div>
+                                </div>
+                                <div class="row input-group mb-3 fw-semibold">
+                                    <div class="col-md-6">
+                                        <label for="senha">Senha</label>
+                                        <input class="form-control" type="password" name="senha" id="senha"
+                                            placeholder="Digite sua senha...">
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <label for="senha">Confirmar Senha</label>
+                                        <input class="form-control" type="password" name="confirmarSenha" id="confirmarSenha"
+                                            placeholder="Confirme sua senha...">
+                                    </div>
+                                </div>
+                                <div class="row input-group mb-3 fw-semibold">
+                                    <div class="col-md-6">
+                                        <label for="estado">Estado</label>
+                                        <select class="form-select form-select-sm-4">
+                                            <option selected>Escolher...</option>
+                                            <option value="AC">AC</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AP">AP</option>
+                                            <option value="AM">AM</option>
+                                            <option value="BA">BA</option>
+                                            <option value="CE">CE</option>
+                                            <option value="DF">DF</option>
+                                            <option value="ES">ES</option>
+                                            <option value="GO">GO</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MT">MT</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MG">MG</option>
+                                            <option value="PA">PA</option>
+                                            <option value="PB">PB</option>
+                                            <option value="PR">PR</option>
+                                            <option value="PE">PE</option>
+                                            <option value="PI">PI</option>
+                                            <option value="RJ">RJ</option>
+                                            <option value="RN">RN</option>
+                                            <option value="RS">RS</option>
+                                            <option value="RO">RO</option>
+                                            <option value="RR">RR</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SP">SP</option>
+                                            <option value="SE">SE</option>
+                                            <option value="TO">TO</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="cep">CEP</label>
+                                        <input class="form-control" type="text" name="cep" id="cep" placeholder="Digite seu cep..."
+                                            maxlength="8" onblur="buscarPorCep()">
+                                    </div>
+                                </div>
+                                <div class="row input-group mb-3 fw-semibold">
+                                    <div class="col-md-6">
+                                        <label for="logradouro">Logradouro</label>
+                                        <input class="form-control" type="text" name="logradouro" id="logradouro"
+                                            placeholder="Logradouro">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="cidade">Cidade</label>
+                                        <input class="form-control" type="text" name="cidade" id="cidade" placeholder="Cidade">
+                                    </div>
+                                </div>
+                                <div class="row input-group m fw-semibold">
+                                    <div class="col-md-6">
+                                        <label for="bairro">Bairro</label>
+                                        <input class="form-control" type="text" name="bairro" id="bairro" placeholder="Bairro">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="numero">Número</label>
+                                        <input class="form-control" type="text" name="numero" id="numero" placeholder="Número">
+                                    </div>
+                                </div>
+                                <div class="col-md-11">
+                                    <label for="opinioes">Opiniões</label>
+                                    <textarea class="form-control" name="opinioes" id="opinioes"></textarea>
+                                </div>
+                                <div class="form-check mb-3 ">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">Eu aceito os<a
+                                            href="trmos-e-condicoes.html" target="_blank"> termos e condições
+                                        </a></label>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                    <button type="reset" class="btn btn-outline-primary">Limpar</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div id="fisica"></div>
-                    <div class="row input-group mb-3 fw-semibold">
-                        <div class="col-md-6">
-                            <label class="control-label col-sm-2" for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome" name="nome" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="control-label col-sm-2" for="sobrenome">Sobrenome</label>
-                            <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <label class="control-label col-sm-2" for="CPF">CPF</label>
-                        <input type="text" class="form-control cpf" id="cpf" name="cpf" maxlength="14" required>
-                    </div>
-                    <div id="juridica" style="display:none;">
-                        <div class="col-md-5">
-                            <label class="control-label col-sm-2" for="cnpj">CNPJ</label>
-                            <input type="text" class="form-control cnpj" id="cnpj" name="cnpj">
-                        </div>
-                        <div class="row input-group mb-3 fw-semibold">
-                            <div class="col-md-6">
-                                <label class="control-label col-sm-6" for="razaoSocial">Razão Social</label>
-                                <input type="text" class="form-control" id="razaoSocial" name="razaoSocial">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="control-label" for="nomefantasia">Nome Fantasia</label>
-                                <input type="text" class="form-control col-lg-6" id="nomefantasia" name="nomefantasia">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="sexo">Sexo</label>
-                        <div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexo" id="masculino" value="M">
-                                <label class="form-check label" for="masculino">Masculino</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexo" id="feminino" value="F">
-                                <label class="form-check label" for="feminino">Feminino</label>
-                            </div>
-                            <div class=" form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexo" id="outro" value="O">
-                                <label class="form-check label" for="outro">Prefiro não informar</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row input-group mb-3 fw-semibold">
-                        <div class="col-md-6">
-                            <label>Telefone</label>
-                            <input type="tel" id="tele" name="tele"
-                                class="form-control bg-light btn-outline-secondary" />
-                        </div>
-                        <div class="col-md-6">
-                            <label for="email">Email</label>
-                            <input class="form-control" type="email" name="email" id="email"
-                                placeholder="Digite seu email...">
-                        </div>
-                    </div>
-                    <div class="row input-group mb-3 fw-semibold">
-                        <div class="col-md-6">
-                            <label for="senha">Senha</label>
-                            <input class="form-control" type="password" name="senha" id="senha"
-                                placeholder="Digite sua senha...">
-                        </div>
-                        <div class="col-md-6 ">
-                            <label for="senha">Confirmar Senha</label>
-                            <input class="form-control" type="password" name="confirmarSenha" id="confirmarSenha"
-                                placeholder="Confirme sua senha...">
-                        </div>
-                    </div>
-                    <div class="row input-group mb-3 fw-semibold">
-                        <div class="col-md-6">
-                            <label for="estado">Estado</label>
-                            <select class="form-select form-select-sm-4" aria-label=".form-select-sm example">
-                                <option selected>Escolher...</option>
-                                <option value="AC">AC</option>
-                                <option value="AL">AL</option>
-                                <option value="AP">AP</option>
-                                <option value="AM">AM</option>
-                                <option value="BA">BA</option>
-                                <option value="CE">CE</option>
-                                <option value="DF">DF</option>
-                                <option value="ES">ES</option>
-                                <option value="GO">GO</option>
-                                <option value="MA">MA</option>
-                                <option value="MT">MT</option>
-                                <option value="MS">MS</option>
-                                <option value="MG">MG</option>
-                                <option value="PA">PA</option>
-                                <option value="PB">PB</option>
-                                <option value="PR">PR</option>
-                                <option value="PE">PE</option>
-                                <option value="PI">PI</option>
-                                <option value="RJ">RJ</option>
-                                <option value="RN">RN</option>
-                                <option value="RS">RS</option>
-                                <option value="RO">RO</option>
-                                <option value="RR">RR</option>
-                                <option value="SC">SC</option>
-                                <option value="SP">SP</option>
-                                <option value="SE">SE</option>
-                                <option value="TO">TO</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="cep">CEP</label>
-                            <input class="form-control" type="text" name="cep" id="cep" placeholder="Digite seu cep..."
-                                maxlength="8" onblur="buscarPoprCpf()">
-                        </div>
-                    </div>
-                    <div class="row input-group mb-3 fw-semibold">
-                        <div class="col-md-6">
-                            <label for="logradouro">Logradouro</label>
-                            <input class="form-control" type="text" name="logradouro" id="logradouro"
-                                placeholder="Logradouro">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="cidade">Cidade</label>
-                            <input class="form-control" type="text" name="cidade" id="cidade" placeholder="Cidade">
-                        </div>
-                    </div>
-                    <div class="row input-group mb-3 fw-semibold">
-                        <div class="col-md-6">
-                            <label for="bairro">Bairro</label>
-                            <input class="form-control" type="text" name="bairro" id="bairro" placeholder="Bairro">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="numero">Número</label>
-                            <input class="form-control" type="text" name="numero" id="numero" placeholder="Número">
-                        </div>
-                    </div>
-                    <div class="col-md-11">
-                        <label for="opinioes">Opiniões</label>
-                        <textarea class="form-control" name="opinioes" id="opinioes"></textarea>
-                    </div>
-                    <div class="form-check mb-3 ">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">Eu aceito os termos e condições</label>
-                    </div>
-                    <div class="form-group mb-3">
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                        <button type="reset" class="btn btn-outline-primary">Limpar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+                </div>
+                <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script src="//http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--<script src="//http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/jquery.mask.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<!--<script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/additional-methods.js"></script>
-    <script type="text/javascript" src="js/localization/messages_pt_BR.js"></script>
-</body>
+    <script type="text/javascript" src="js/localization/messages_pt_BR.js"></script>-->
 
 </html>
