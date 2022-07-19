@@ -11,7 +11,6 @@ $(document).ready(function () {
 	$("#cep").mask('00.000-000', { placeholder: '__.___-___' });
 	$("#cpf").mask('000.000.000-00', { placeholder: '___.___.___-__' });
 	$("#cnpj").mask('00.000.000/0000-00', { placeholder: '___.___.___/____-__' });
-	$("#cpfpj").mask('000.000.000-00', { placeholder: '___.___.___-__' });
 
 })
 
@@ -76,8 +75,121 @@ $(document).ready(function () {
 });
 
 
+const btenviar = document.getElementById("btenviar")
+
+form.addEventListener("submit", (event) => {
+
+	event.preventDefault()
+
+	const cpf = document.getElementById('cpf')
+	const email = document.getElementById('email')
+	const nome = document.getElementById('nome')
+	const sobrenome = document.getElementById('sobrenome')
+	const razaoSocial = document.getElementById('razaoSocial')
+	const nomeFantasia = document.getElementById('nomeFantasia')
+	const cnpj = document.getElementById('cnpj')
+	const logradouro = document.getElementById('logradouro')
+	const cidade = document.getElementById('cidade')
+	const bairro = document.getElementById('bairro')
+	const numero = document.getElementById('numero')
+	const cep = document.getElementById('cep')
+	const estado = document.getElementById('estado')
+	const tele = document.getElementById('tele')
+	
+	
+	
+	
+
+	if (cpf.value == false) {
+        cpf.classList.add("is-invalid");
+        cpf.focus()
+    } else {
+        cpf.classList.remove("is-invalid")
+    }
+	if (email.value == false) {
+        email.classList.add("is-invalid");
+        email.focus()
+    } else {
+        email.classList.remove("is-invalid")
+    }
+	if (nome.value == false) {
+        nome.classList.add("is-invalid");
+        nome.focus()
+    } else {
+        nome.classList.remove("is-invalid")
+    }
+	if (sobrenome.value == false) {
+        sobrenome.classList.add("is-invalid");
+        sobrenome.focus()
+    } else {
+        sobrenome.classList.remove("is-invalid")
+    }
+	if (razaoSocial.value == false) {
+        razaoSocial.classList.add("is-invalid");
+        razaoSocial.focus()
+    } else {
+        razaoSocial.classList.remove("is-invalid")
+    }
+	if (nomeFantasia.value == false) {
+        nomeFantasia.classList.add("is-invalid");
+        nomeFantasia.focus()
+    } else {
+        nomeFantasia.classList.remove("is-invalid")
+    }
+	if (cnpj.value == false) {
+        cnpj.classList.add("is-invalid");
+        cnpj.focus()
+    } else {
+        cnpj.classList.remove("is-invalid")
+    }
+	if (logradouro.value == false) {
+        logradouro.classList.add("is-invalid");
+        logradouro.focus()
+    } else {
+        logradouro.classList.remove("is-invalid")
+    }
+	if (cidade.value == false) {
+        cidade.classList.add("is-invalid");
+        cidade.focus()
+    } else {
+        cidade.classList.remove("is-invalid")
+    }
+	if (bairro.value == false) {
+        bairro.classList.add("is-invalid");
+        bairro.focus()
+    } else {
+        bairro.classList.remove("is-invalid")
+    }
+	if (numero.value == false) {
+        numero.classList.add("is-invalid");
+        numero.focus()
+    } else {
+        numero.classList.remove("is-invalid")
+    }
+	if (cep.value == false) {
+        cep.classList.add("is-invalid");
+        cep.focus()
+    } else {
+        cep.classList.remove("is-invalid")
+    }
+	if (estado.value == "Escolher...") {
+        estado.classList.add("is-invalid");
+        estado.focus()
+    } else {
+        estado.classList.remove("is-invalid")
+    }
+	if (tele.value == false) {
+        tele.classList.add("is-invalid");
+        tele.focus()
+    } else {
+        tele.classList.remove("is-invalid")
+    }
+	
+})
+
+
 //validaçao usando jquery validate
-$(document).ready(function(){
+$(document).ready(function () {
 
 	$("#form").validate({
 		rules:{
@@ -91,58 +203,21 @@ $(document).ready(function(){
 				required:true,
 				cnpjBR:true,
 			},
-		    email:{
+			email:{
 				required:true,
-				email:true,
+				email:true
+			},
+			senha:{
+				required:true,
+				strongPassword:true,
+			},
+			senha2:{
+				required:true,
+				equalTo:"#senha"
 			}
 		}
 	})
 })
-
-const btenviar = document.getElementById("btenviar")
-
-form.addEventListener("submit", (event) => {
-
-	const cpf = document.getElementById('cpf')
-
-	if (cpf.value == false) {
-        cpf.classList.add("is-invalid");
-        cpf.focus()
-    } else {
-        cpf.classList.remove("is-invalid")
-    }
-})
-
-
-/**jQuery.validator.setDefaults({
-	debug: true,
-	success: "valid"
-});
-
-
-$( ".validarSenha" ).validate({
-	rules: {
-	password: "required",
-	password_again: {
-		equalTo: "#password"
-	}
-	}
-});
-
-
-
-function validarSenha() {
-    $('#senha').value();
-	$('#confirmarSenha').value();
-
-	if (senha != confirmarSenha) {
-	    confirmarSenha.setCustomValidity("Senhas diferentes!");
-	    return false;
-	} else {
-	    return true;
-	}
-}
-*/
 
 function verificaForcaSenha() 
 {
@@ -162,3 +237,4 @@ function verificaForcaSenha()
 		}
 	}
 }
+
