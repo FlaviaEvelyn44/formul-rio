@@ -8,7 +8,7 @@
     <title>Formulário de cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 
 </head>
 
@@ -20,7 +20,6 @@
                 <form id="form" class="form" onsubmit="validarCpf()">
                     <div class="row mb-3">
                         <div class="form-group">
-                            <label for="sexo">Tipo de pessoa</label>
                             <div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" id="radioFisica" name="pessoaTipo"
@@ -50,17 +49,17 @@
                             <label class="form-control-label col-sm-2" for="CPF">CPF</label>
                             <input type="text" class="form-control cpf" id="cpf" name="cpf">
                         </div>
-                        <div class="col-md-6" juridica>
+                        <div class="col-md-6 juridica">
                             <label class="form-control-label col-sm-2" for="cnpj">CNPJ</label>
                             <input type="text" class="form-control cnpj" id="cnpj" name="cnpj" required>
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <div class="col-md-6" juridica>
+                    <div class="row mb-3 juridica">
+                        <div class="col-md-6 ">
                             <label class="control-label col-sm-6" for="razaoSocial">Razão Social</label>
                             <input type="text" class="form-control" id="razaoSocial" name="razaoSocial" required>
                         </div>
-                        <div class="col-md-6" juridica>
+                        <div class="col-md-6">
                             <label class="control-label" for="nomefantasia">Nome Fantasia</label>
                             <input type="text" class="form-control col-lg-6" id="nomefantasia" name="nomefantasia"
                                 required>
@@ -91,19 +90,21 @@
                         <div class="col-md-6">
                             <label for="email">Email</label>
                             <input class="form-control" type="email" name="email" id="email"
-                                placeholder="Digite seu email..." required>
+                                placeholder="Digite seu email...">
                         </div>
                     </div>
-                    <div class="row mb-3">
+                    <div class="row mb-3 validarSenha">
                         <div class="col-md-6">
                             <label for="senha">Senha</label>
                             <input class="form-control" type="password" name="senha" id="senha"
                                 placeholder="Digite sua senha..." required>
+                                <span id="password-status"></span>
                         </div>
                         <div class="col-md-6 ">
                             <label for="senha">Confirmar Senha</label>
                             <input class="form-control" type="password" name="confirmarSenha" id="confirmarSenha"
                                 placeholder="Confirme sua senha..." required>
+                                <span id="password-status"></span>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -178,14 +179,14 @@
                             </a></label>
                     </div>
                     <div class="form-group mb-3">
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" id="btenviar" name="btenviar" class="btn btn-primary">Enviar</button>
                         <button type="reset" class="btn btn-outline-primary">Limpar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
