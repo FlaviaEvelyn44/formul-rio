@@ -1,19 +1,23 @@
+//esconder pessoa juridica
 function pessoa(tipo){
     if(tipo=="fisica"){
         $(".juridica").hide();
     }else if(tipo=="juridica"){
         $(".juridica").show();
     }
-}
+};
 
+
+//mascaras
 $(document).ready(function () {
 	$("#tele").mask('(00)00000-0000', { placeholder: '(__)_____-____' });
 	$("#cep").mask('00.000-000', { placeholder: '__.___-___' });
 	$("#cpf").mask('000.000.000-00', { placeholder: '___.___.___-__' });
 	$("#cnpj").mask('00.000.000/0000-00', { placeholder: '___.___.___/____-__' });
 
-})
+});
 
+// validaçao do cep
 function limpaCep() {
 	// Limpa valores do formulário de cep.
 	$("#logradouro").val("");
@@ -74,118 +78,115 @@ $(document).ready(function () {
 	});
 });
 
+//campos obrigatorios
+const btenviar = $("#btenviar");
 
-const btenviar = document.getElementById("btenviar")
+$('#form').on("submit", (event) => {
 
-form.addEventListener("submit", (event) => {
+	event.preventDefault();
 
-	event.preventDefault()
-
-	const cpf = document.getElementById('cpf')
-	const email = document.getElementById('email')
-	const nome = document.getElementById('nome')
-	const sobrenome = document.getElementById('sobrenome')
-	const razaoSocial = document.getElementById('razaoSocial')
-	const nomeFantasia = document.getElementById('nomeFantasia')
-	const cnpj = document.getElementById('cnpj')
-	const logradouro = document.getElementById('logradouro')
-	const cidade = document.getElementById('cidade')
-	const bairro = document.getElementById('bairro')
-	const numero = document.getElementById('numero')
-	const cep = document.getElementById('cep')
-	const estado = document.getElementById('estado')
-	const tele = document.getElementById('tele')
+	const cpf = $('#cpf');
+	const email = $('#email');
+	const nome = $('#nome');
+	const sobrenome = $('#sobrenome');
+	const razaoSocial = $('#razaoSocial');
+	const nomeFantasia = $('#nomeFantasia');
+	const cnpj = $('#cnpj');
+	const logradouro = $('#logradouro');
+	const cidade = $('#cidade');
+	const bairro = $('#bairro');
+	const numero = $('#numero');
+	const cep = $('#cep');
+	const estado = $('#estado');
+	const tele = $('#tele');
 	
 	
-	
-	
-
 	if (cpf.value == false) {
-        cpf.classList.add("is-invalid");
-        cpf.focus()
+        cpf.addClass("is-invalid");
+        cpf.focus();
     } else {
-        cpf.classList.remove("is-invalid")
+        cpf.removeClass("is-invalid");
     }
 	if (email.value == false) {
-        email.classList.add("is-invalid");
+        email.addClass("is-invalid")
         email.focus()
     } else {
-        email.classList.remove("is-invalid")
+        email.removeClass("is-invalid");
     }
 	if (nome.value == false) {
-        nome.classList.add("is-invalid");
-        nome.focus()
+        nome.addClass("is-invalid");
+        nome.focus();
     } else {
-        nome.classList.remove("is-invalid")
+        nome.removeClass("is-invalid");
     }
 	if (sobrenome.value == false) {
-        sobrenome.classList.add("is-invalid");
-        sobrenome.focus()
+        sobrenome.addClass("is-invalid");
+        sobrenome.focus();
     } else {
-        sobrenome.classList.remove("is-invalid")
+        sobrenome.removeClass("is-invalid");
     }
 	if (razaoSocial.value == false) {
-        razaoSocial.classList.add("is-invalid");
-        razaoSocial.focus()
+        razaoSocial.addClass("is-invalid");
+        razaoSocial.focus();
     } else {
-        razaoSocial.classList.remove("is-invalid")
+        razaoSocial.removeClass("is-invalid");
     }
 	if (nomeFantasia.value == false) {
-        nomeFantasia.classList.add("is-invalid");
-        nomeFantasia.focus()
+        nomeFantasia.addClass("is-invalid");
+        nomeFantasia.focus();
     } else {
-        nomeFantasia.classList.remove("is-invalid")
+        nomeFantasia.removeClass("is-invalid");
     }
 	if (cnpj.value == false) {
-        cnpj.classList.add("is-invalid");
-        cnpj.focus()
+        cnpj.addClass("is-invalid");
+        cnpj.focus();
     } else {
-        cnpj.classList.remove("is-invalid")
+        cnpj.removeClass("is-invalid");
     }
 	if (logradouro.value == false) {
-        logradouro.classList.add("is-invalid");
-        logradouro.focus()
+        logradouro.addClass("is-invalid");
+        logradouro.focus();
     } else {
-        logradouro.classList.remove("is-invalid")
+        logradouro.removeClass("is-invalid");
     }
 	if (cidade.value == false) {
-        cidade.classList.add("is-invalid");
-        cidade.focus()
+        cidade.addClass("is-invalid");
+        cidade.focus();
     } else {
-        cidade.classList.remove("is-invalid")
+        cidade.removeClass("is-invalid");
     }
 	if (bairro.value == false) {
-        bairro.classList.add("is-invalid");
-        bairro.focus()
+        bairro.addClass("is-invalid");
+        bairro.focus();
     } else {
-        bairro.classList.remove("is-invalid")
+        bairro.removeClass("is-invalid");
     }
 	if (numero.value == false) {
-        numero.classList.add("is-invalid");
-        numero.focus()
+        numero.addClass("is-invalid");
+        numero.focus();
     } else {
-        numero.classList.remove("is-invalid")
+        numero.removeClass("is-invalid");
     }
 	if (cep.value == false) {
-        cep.classList.add("is-invalid");
-        cep.focus()
+        cep.addClass("is-invalid");
+        cep.focus();
     } else {
-        cep.classList.remove("is-invalid")
+        cep.removeClass("is-invalid");
     }
 	if (estado.value == "Escolher...") {
-        estado.classList.add("is-invalid");
-        estado.focus()
+        estado.addClass("is-invalid");
+        estado.focus();
     } else {
-        estado.classList.remove("is-invalid")
+        estado.removeClass("is-invalid");
     }
 	if (tele.value == false) {
-        tele.classList.add("is-invalid");
-        tele.focus()
+        tele.addClass("is-invalid");
+        tele.focus();
     } else {
-        tele.classList.remove("is-invalid")
+        tele.removeClass("is-invalid");
     }
 	
-})
+});
 
 
 //validaçao usando jquery validate
@@ -193,32 +194,34 @@ $(document).ready(function () {
 
 	$("#form").validate({
 		rules:{
-			cpf:{
-				required:true,
-				cpfBR:true,
-				maxlength:14,
-				minlength:14,
-			},
-			cnpj:{
-				required:true,
-				cnpjBR:true,
-			},
-			email:{
-				required:true,
-				email:true
-			},
+			// cpf:{
+			// 	required:true,
+			// 	cpfBR:true,
+			// 	maxlength:14,
+			// 	minlength:14,
+			// },
+			// cnpj:{
+			// 	required:true,
+			// 	cnpjBR:true,
+			// },
+			// email:{
+			// 	required:true,
+			// 	email:true
+			// },
 			senha:{
 				required:true,
 				strongPassword:true,
 			},
 			senha2:{
 				required:true,
-				equalTo:"#senha"
+				equalTo:"#senha",
 			}
 		}
-	})
-})
+	});
+});
 
+
+//força da senha
 function verificaForcaSenha() 
 {
 	var numeros = /([0-9])/;
