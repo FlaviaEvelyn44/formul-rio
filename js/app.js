@@ -11,7 +11,6 @@ var formulario = {
 		});
 
 		$('#form').on("submit", (event) => {
-			event.preventDefault();
 			formulario.salvar();
 		});
 	},
@@ -55,6 +54,9 @@ var formulario = {
 				senha2: {
 					required: true,
 					equalTo: "#senha",
+				},
+				termos: {
+					required: true
 				}
 			}
 		});
