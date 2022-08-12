@@ -4,71 +4,16 @@ var formulario = {
 		this.events();
 		this.formValidate();
 	},
-
 	events: function () {
 		$("#cep").on('blur', function () {
 			formulario.buscarCep($(this));
-		});
-<<<<<<< HEAD
-		$('#form').on("submit", (event) => {
-			formulario.salvar();
-		});
-	},
+		} ) ;
 
-	mascaras: function () {
-		$("#tele").mask('(00)00000-0000', { placeholder: '(__)_____-____' });
-		$("#cep").mask('00.000-000', { placeholder: '__.___-___' });
-		$("#cpf").mask('000.000.000-00', { placeholder: '___.___.___-__' });
-		$("#cnpj").mask('00.000.000/0000-00', { placeholder: '___.___.___/____-__' });
-	},
-
-	formValidate: function () {
-		$("#form").validate({
-			rules: {
-				cpf: {
-					required: true,
-					cpfBR: true,
-					maxlength: 14,
-					minlength: 14,
-				},
-				cnpj: {
-					required: true,
-					cnpjBR: true,
-				},
-				email: {
-					required: true,
-					email: true
-				},
-				senha: {
-					required: true,
-					strongPassword: formulario.strongPassword
-				},
-				senha2: {
-					required: true,
-					equalTo: "#senha",
-				},
-				termos: {
-					required: true,
-				}
-			}
-		});
-	},
-
-	pessoa: function (tipo) {
-		if (tipo == "fisica") {
-			$(".juridica").hide();
-		} else if (tipo == "juridica") {
-			$(".juridica").show();
-		}
-	},
-
-=======
-
-		$('#form').on("submit", (event) => {
-			formulario.salvar();
-		});
-	},
-
+		$ ( '#form' ) . on ( "enviar" ,  ( evento )  =>  {
+			evento . preventDefault ( ) ;
+			formulário . salvar ( ) ;
+		} ) ;
+	} ,
 	mascaras: function () {
 		$("#tele").mask('(00)00000-0000', {
 			placeholder: '(__)_____-____'
@@ -82,8 +27,8 @@ var formulario = {
 		$("#cnpj").mask('00.000.000/0000-00', {
 			placeholder: '___.___.___/____-__'
 		});
+	
 	},
-
 	formValidate: function () {
 		$("#form").validate({
 			rules: {
@@ -99,23 +44,23 @@ var formulario = {
 				},
 				email: {
 					required: true,
-					email: true
+					email: true,
 				},
 				senha: {
 					required: true,
 					strongPassword: formulario.strongPassword
 				},
-				senha2: {
-					required: true,
-					equalTo: "#senha",
-				},
-				termos: {
-					required: true
+				senha2 : {
+					required : true,
+					equalTo : "#senha",
+				} ,
+				termos : {
+					required : true,
 				}
+			
 			}
-		});
+		} ) ;
 	},
-
 	pessoa: function (tipo) {
 		if (tipo == "fisica") {
 			$(".juridica").hide();
@@ -123,8 +68,6 @@ var formulario = {
 			$(".juridica").show();
 		}
 	},
-
->>>>>>> 4398451fc94ec0516e852bfd90d95202d521731f
 	buscarCep: function (element) {
 		var cep = element.val().replace(/\D/g, '');
 		if (cep != "") {
@@ -153,7 +96,6 @@ var formulario = {
 			formulario.limpaCep();
 		}
 	},
-
 	salvar: function () {
 		const cpf = $('#cpf');
 		const email = $('#email');
@@ -169,21 +111,18 @@ var formulario = {
 		const cep = $('#cep');
 		const estado = $('#estado');
 		const tele = $('#tele');
-
 		if (!cpf.val().length) {
 			cpf.addClass("is-invalid");
 			cpf.focus();
 		} else {
 			cpf.removeClass("is-invalid");
 		}
-
 		if (!email.val().length) {
 			email.addClass("is-invalid")
 			email.focus()
 		} else {
 			email.removeClass("is-invalid");
 		}
-<<<<<<< HEAD
 		if (!nome.val().length) {
 			nome.addClass("is-invalid");
 			nome.focus();
@@ -244,114 +183,12 @@ var formulario = {
 		} else {
 			cep.removeClass("is-invalid");
 		}
-		if (!estado.value == "Escolher...") {
-			estado.addClass("is-invalid");
-			estado.focus();
-		} else {
-			estado.removeClass("is-invalid");
-		}
-		if (!tele.val().length) {
-			tele.addClass("is-invalid");
-			tele.focus();
-		} else {
-			tele.removeClass("is-invalid");
-		}
-	},
-
-	limpaCep: function () {
-		$("#logradouro").val("");
-		$("#cidade").val("");
-		$("#bairro").val("");
-	},
-
-	strongPassword: function () {
-		var numeros = /([0-9])/;
-		var alfabeto = /([a-zA-Z])/;
-		var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
-
-		if ($('.validarSenha').val().length < 6) {
-			$('#password-status').html("<span style='color:red'>Fraco, insira no mínimo 6 caracteres</span>");
-		} else {
-			if ($('.validarSenha').val().match(numeros) && $('.validarSenha').val().match(alfabeto) && $('.validarSenha').val().match(chEspeciais)) {
-=======
-
-		if (!nome.val().length) {
-			nome.addClass("is-invalid");
-			nome.focus();
-		} else {
-			nome.removeClass("is-invalid");
-		}
-
-		if (!sobrenome.val().length) {
-			sobrenome.addClass("is-invalid");
-			sobrenome.focus();
-		} else {
-			sobrenome.removeClass("is-invalid");
-		}
-
-		if (!razaoSocial.val().length) {
-			razaoSocial.addClass("is-invalid");
-			razaoSocial.focus();
-		} else {
-			razaoSocial.removeClass("is-invalid");
-		}
-
-		if (!nomeFantasia.val().length) {
-			nomeFantasia.addClass("is-invalid");
-			nomeFantasia.focus();
-		} else {
-			nomeFantasia.removeClass("is-invalid");
-		}
-
-		if (!cnpj.val().length) {
-			cnpj.addClass("is-invalid");
-			cnpj.focus();
-		} else {
-			cnpj.removeClass("is-invalid");
-		}
-
-		if (!logradouro.val().length) {
-			logradouro.addClass("is-invalid");
-			logradouro.focus();
-		} else {
-			logradouro.removeClass("is-invalid");
-		}
-
-		if (!cidade.val().length) {
-			cidade.addClass("is-invalid");
-			cidade.focus();
-		} else {
-			cidade.removeClass("is-invalid");
-		}
-
-		if (!bairro.val().length) {
-			bairro.addClass("is-invalid");
-			bairro.focus();
-		} else {
-			bairro.removeClass("is-invalid");
-		}
-
-		if (!numero.val().length) {
-			numero.addClass("is-invalid");
-			numero.focus();
-		} else {
-			numero.removeClass("is-invalid");
-		}
-
-		if (!cep.val().length) {
-			cep.addClass("is-invalid");
-			cep.focus();
-		} else {
-			cep.removeClass("is-invalid");
-		}
-
 		if (!estado.val().length == "Escolher...") {
 			estado.addClass("is-invalid");
 			estado.focus();
 		} else {
 			estado.removeClass("is-invalid");
 		}
-
 		if (!tele.val().length) {
 			tele.addClass("is-invalid");
 			tele.focus();
@@ -359,24 +196,20 @@ var formulario = {
 			tele.removeClass("is-invalid");
 		}
 	},
-
 	limpaCep: function () {
 		// Limpa valores do formulário de cep.
 		$("#logradouro").val("");
 		$("#cidade").val("");
 		$("#bairro").val("");
 	},
-
 	strongPassword: function () {
 		var numeros = /([0-9])/;
 		var alfabeto = /([a-zA-Z])/;
 		var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
-
 		if ($('#senha').val().length < 6) {
 			$('#password-status').html("<span style='color:red'>Fraco, insira no mínimo 6 caracteres</span>");
 		} else {
 			if ($('#senha').val().match(numeros) && $('#senha').val().match(alfabeto) && $('#senha').val().match(chEspeciais)) {
->>>>>>> 4398451fc94ec0516e852bfd90d95202d521731f
 				$('#password-status').html("<span style='color:green'><b>Forte</b></span>");
 			} else {
 				$('#password-status').html("<span style='color:orange'>Médio, insira um caracter especial</span>");
@@ -384,13 +217,6 @@ var formulario = {
 		}
 	}
 };
-
-<<<<<<< HEAD
-$(document).ready(function() {
-	formulario.iniciar();
-});
-=======
 $(document).ready(function () {
 	formulario.iniciar();
 });
->>>>>>> 4398451fc94ec0516e852bfd90d95202d521731f

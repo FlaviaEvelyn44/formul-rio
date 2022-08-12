@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    
 
 </head>
 
@@ -17,7 +17,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-6">
                 <h1 class="text-center">Formulário de Cadastro</h1>
-                <form id="form" class="form">
+                <form id="form" class="form" action="backend\cadastro.php" method="POST">
                     <div class="row mb-3">
                         <div class="form-group">
                             <div>
@@ -65,20 +65,27 @@
                                 required>
                         </div>
                     </div>
-                    <div class="form-group mb-3 required">
-                        <label for="sexo">Sexo</label>
-                        <div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexo" id="masculino" value="M">
-                                <label class="form-check-label" for="masculino">Masculino</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexo" id="feminino" value="F">
-                                <label class="form-check-label" for="feminino">Feminino</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexo" id="outro" value="O">
-                                <label class="form-check-label" for="outro">Prefiro não informar</label>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="control-label" for="dataNascimento">Data de Nascimento</label>
+                            <input type="date" class="form-control col-lg-6" id="dataNascimento" name="dataNascimento"
+                                >
+                        </div>
+                        <div class="form-group md-6 required">
+                            <label for="sexo">Sexo</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sexo" id="masculino" value="M">
+                                    <label class="form-check-label" for="masculino">Masculino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sexo" id="feminino" value="F">
+                                    <label class="form-check-label" for="feminino">Feminino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sexo" id="outro" value="O">
+                                    <label class="form-check-label" for="outro">Prefiro não informar</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,13 +105,13 @@
                             <label for="senha">Senha</label>
                             <input class="form-control" type="password" name="senha" id="senha"
                                 placeholder="Digite sua senha..." required>
-                                <span id="password-status"></span>
+                            <span id="password-status"></span>
                         </div>
                         <div class="col-md-6 ">
                             <label for="senha2">Confirmar Senha</label>
                             <input class="form-control" type="password" name="senha2" id="senha2"
                                 placeholder="Confirme sua senha..." required>
-                                <span id="password-status"></span>
+                            <span id="password-status"></span>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -114,7 +121,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="estado">Estado</label>
-                            <select class="form-select form-select-sm-4" id="estado">
+                            <select class="form-select form-select-sm-4" name="estado" id="estado">
                                 <option selected>Escolher...</option>
                                 <option value="AC">AC</option>
                                 <option value="AL">AL</option>
@@ -167,15 +174,21 @@
                             <input class="form-control" type="text" name="numero" id="numero" placeholder="Número"
                                 required>
                         </div>
+                        <div class="col-md-6">
+                            <label for="complemento">complemento</label>
+                            <input class="form-control" type="text" name="complemento" id="complemento" placeholder="complemento"
+                                required>
+                        </div>
                     </div>
                     <div class="col-md-11">
                         <label for="opinioes">Opiniões</label>
                         <textarea class="form-control" name="opinioes" id="opinioes"></textarea>
                     </div>
                     <div class="form-check mb-3 ">
-                        <input class="form-check-input" type="checkbox" name="termos" value="termos" id="termos" required>
+                        <input class="form-check-input" type="checkbox" name="termos" value="termos" id="termos"
+                            required>
                         <label class="form-check-label" for="termos">Eu aceito os <a href="termos-e-condicoes.html"></a>
-                                target="_blank"> termos e condições
+                            termos e condições
                             </a></label>
                     </div>
                     <div class="form-group mb-3">
@@ -186,7 +199,8 @@
             </div>
         </div>
     </div>
-    
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
@@ -194,11 +208,11 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/jquery.mask.js"></script>
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/additional-methods.js"></script>
     <script type="text/javascript" src="js/localization/messages_pt_BR.js"></script>
-    
+
 </body>
 
 </html>
