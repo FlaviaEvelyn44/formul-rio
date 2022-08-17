@@ -2,8 +2,10 @@
 
     include_once('conexao.php'); 
     
-    if(isset($_POST['update']))
+    if(!empty($_POST['nome']))
     {
+        $id = $_GET['id_pessoa'];
+        // $id = $_POST['id_pessoa'];
         
         $nome = $_POST['nome'];
         $sobrenome = $_POST['sobrenome'];
@@ -35,5 +37,3 @@
 
 
 header('Location:/formulario/formulario.php')
-
-?>
