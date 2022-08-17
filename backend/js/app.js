@@ -35,7 +35,7 @@ var formulario = {
 				cpf: {
 					required: true,
 					cpfBR: true,
-					maxlength: 14,
+					//maxlength: 14,
 					minlength: 14,
 				},
 				cnpj: {

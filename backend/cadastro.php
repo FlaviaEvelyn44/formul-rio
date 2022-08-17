@@ -22,7 +22,7 @@ $bairro = $_POST['bairro'];
 $numero = $_POST['numero'];
 //$opinioes = $_POST['opinioes'];
 
-$sql = "INSERT INTO pessoa(no_pessoa,ds_sobrenome,ds_cpf,co_sexo,ds_telefone,ds_email,ds_cep,co_uf,ds_logradouro,ds_cidade,ds_bairro,ds_numero,dt_nascimento)
+$sql = "INSERT INTO pessoa(no_pessoa,ds_sobrenome,ds_cpf,id_sexo,ds_telefone,ds_email,ds_cep,co_uf,ds_logradouro,ds_cidade,ds_bairro,ds_numero,dt_nascimento)
 VALUES('$nome','$sobrenome','$cpf','$sexo','$tele','$email','$cep','$estado','$logradouro','$cidade','$bairro','$numero','$data')";
 
 if($result = mysqli_query($conexao,$sql)){

@@ -63,7 +63,7 @@ $con = $conexao->query($busca) or die ($conexao->error);
                         <td><?php echo $row_usuario['co_uf'];?></td>
                         <td><?php echo $row_usuario['ds_telefone'];?></td>
                         <td><?php echo $row_usuario['ds_numero'];?></td>
-                        <td><?php echo $row_usuario['co_sexo'];?></td>
+                        <td><?php echo $row_usuario['id_sexo'];?></td>
                         <td><?php echo date("d/m/y",strtotime( $row_usuario['dt_nascimento']));?></td>
                         <td><?php echo "<a class='btn btn-sm btn-primary' href='edit.php?id_pessoa=" . $row_usuario['id_pessoa'] . "'>
                             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil' viewBox='0 0 16 16'>
