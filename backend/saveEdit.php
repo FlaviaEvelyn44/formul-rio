@@ -2,11 +2,10 @@
 
     include_once('conexao.php'); 
     
-    if(isset($_POST['update']))
+    if(!empty($_POST['nome']))
     {
-        // echo "<pre>";
-        // var_dump($_POST);
-        // die;
+        $id = $_GET['id_pessoa'];
+        // $id = $_POST['id_pessoa'];
         
         // $id = $_POST['id'];
         $nome = $_POST['nome'];
@@ -39,6 +38,4 @@
     }   
 
 
-    
-
-?>
+header('Location:/formulario/formulario.php')

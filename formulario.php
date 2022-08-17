@@ -8,8 +8,6 @@
     <title>Formulário de cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-    
-
 </head>
 
 <body>
@@ -68,8 +66,7 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label class="control-label" for="dataNascimento">Data de Nascimento</label>
-                            <input type="date" class="form-control col-lg-6" id="dataNascimento" name="dataNascimento"
-                                >
+                            <input type="date" class="form-control col-lg-6" id="dataNascimento" name="dataNascimento">
                         </div>
                         <div class="form-group md-6 required">
                             <label for="sexo">Sexo</label>
@@ -176,8 +173,8 @@
                         </div>
                         <div class="col-md-6">
                             <label for="complemento">complemento</label>
-                            <input class="form-control" type="text" name="complemento" id="complemento" placeholder="complemento"
-                                required>
+                            <input class="form-control" type="text" name="complemento" id="complemento"
+                                placeholder="complemento" required>
                         </div>
                     </div>
                     <div class="col-md-11">
@@ -202,17 +199,16 @@
 
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
     <script type="text/javascript" src="js/jquery.mask.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/additional-methods.js"></script>
     <script type="text/javascript" src="js/localization/messages_pt_BR.js"></script>
-
 </body>
 
 </html>
