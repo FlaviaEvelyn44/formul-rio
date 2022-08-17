@@ -16,7 +16,7 @@
             while($row_usuario = mysqli_fetch_assoc($result))
             {
             
-
+                
                 $nome = $row_usuario["no_pessoa"];
                 $sobrenome = $row_usuario["ds_sobrenome"];
                 $email = $row_usuario["ds_email"];
@@ -63,6 +63,7 @@
             <div class="col-lg-6">
                 <h1 class="text-center">Editar usuário</h1>
                 <form id="form" class="form" action="saveEdit.php" method="POST">
+                    <input type="hidder" value="<?php echo $id; ?>" name="id">
                     <div class="row mb-3">
                         <div class="form-group">
                             <div>
@@ -119,7 +120,7 @@
                             <label for="sexo">Sexo</label >
                             <div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sexo" id="masculino" value="M" <?php echo ($sexo=='masculino') ? 'checked' : '';?> />
+                                    <input class="form-check-input" type="radio" name="sexo" id="masculino" value="M" <?php echo ($sexo=='masculino') ? 'checked' : '';?> value="M"/>
                                     <label class="form-check-label" for="masculino">Masculino</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -206,6 +207,7 @@
                         </div>
                         
                     <div class="form-group mb-3">
+                        
                         <button type="submit" id="update" name="update" class="btn btn-primary">Salvar alteraões</button>
                         <a href="http://localhost/formulario/backend/tabela.php">Voltar para usuários</a>
                     </div>

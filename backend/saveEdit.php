@@ -4,21 +4,25 @@
     
     if(isset($_POST['update']))
     {
+        echo "<pre>";
+        var_dump($_POST);
+        die;
         
+        $id = $_POST['id'];
         $nome = $_POST['nome'];
         $sobrenome = $_POST['sobrenome'];
         $cpf = $_POST['cpf'];
         //$cnpj = $_POST['cnpj'];
         //$razaoSocial = $_POST['razaoSocial'];
         //$nomeFantasia = $_POST['nomeFantasia'];
-        $data = $_POST['nascimento'];
+        $data = $_POST['dataNascimento'];
         $sexo = $_POST['sexo'];
-        $tele = $_POST['telefone'];
+        $tele = $_POST['tele'];
         $email = $_POST['email'];
         //$senha = $_POST['senha'];
         //$senha2 = $_POST['senha2'];
         $cep = $_POST['cep'];
-        $estado = $_POST['uf'];
+        $estado = $_POST['estado'];
         $logradouro = $_POST['logradouro'];
         $cidade = $_POST['cidade'];
         $bairro = $_POST['bairro'];
@@ -31,9 +35,9 @@
         
         $result = $conexao->query($sqlUpdate);
         print_r($result);
-    }
+    }   
 
 
-header('Location:/formulario/formulario.php')
+    
 
 ?>
