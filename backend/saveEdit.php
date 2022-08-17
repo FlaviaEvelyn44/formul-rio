@@ -4,11 +4,11 @@
     
     if(isset($_POST['update']))
     {
-        echo "<pre>";
-        var_dump($_POST);
-        die;
+        // echo "<pre>";
+        // var_dump($_POST);
+        // die;
         
-        $id = $_POST['id'];
+        // $id = $_POST['id'];
         $nome = $_POST['nome'];
         $sobrenome = $_POST['sobrenome'];
         $cpf = $_POST['cpf'];
@@ -29,6 +29,7 @@
         $numero = $_POST['numero'];
         //$opinioes = $_POST['opinioes'];
 
+        
         $sqlUpdate = "UPDATE pessoa 
         SET  no_pessoa='$nome',ds_sobrenome='$sobrenome',ds_cpf='$cpf',id_sexo='$sexo',ds_telefone='$tele',ds_email='$email',ds_cep='$cep',co_uf='$estado',ds_logradouro='$logradouro',ds_cidade=,'$cidade',ds_bairro='$bairro',ds_numero='$numero',dt_nascimento='$data' 
         WHERE id_pessoa=$id";
